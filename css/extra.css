@@ -1,0 +1,49 @@
+/* Supplemental styles for enhanced UX */
+
+/* Glassmorphism hover effect for cards */
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--p-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+    border: 2px solid var(--p-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Image loading placeholder animation */
+@keyframes placeholder {
+    0% { background-position: -468px 0; }
+    100% { background-position: 468px 0; }
+}
+
+.img-placeholder {
+    animation: placeholder 1.2s linear infinite forwards;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    position: relative;
+}
